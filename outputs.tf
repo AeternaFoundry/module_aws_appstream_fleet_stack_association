@@ -1,0 +1,17 @@
+output "appstream_fleet_stack_associations_id" {
+  description = "Map of id values across all appstream_fleet_stack_associations, keyed the same as var.appstream_fleet_stack_associations"
+  value       = { for k, v in aws_appstream_fleet_stack_association.appstream_fleet_stack_associations : k => v.id if v.id != null && length(v.id) > 0 }
+}
+output "appstream_fleet_stack_associations_fleet_name" {
+  description = "Map of fleet_name values across all appstream_fleet_stack_associations, keyed the same as var.appstream_fleet_stack_associations"
+  value       = { for k, v in aws_appstream_fleet_stack_association.appstream_fleet_stack_associations : k => v.fleet_name if v.fleet_name != null && length(v.fleet_name) > 0 }
+}
+output "appstream_fleet_stack_associations_region" {
+  description = "Map of region values across all appstream_fleet_stack_associations, keyed the same as var.appstream_fleet_stack_associations"
+  value       = { for k, v in aws_appstream_fleet_stack_association.appstream_fleet_stack_associations : k => v.region if v.region != null && length(v.region) > 0 }
+}
+output "appstream_fleet_stack_associations_stack_name" {
+  description = "Map of stack_name values across all appstream_fleet_stack_associations, keyed the same as var.appstream_fleet_stack_associations"
+  value       = { for k, v in aws_appstream_fleet_stack_association.appstream_fleet_stack_associations : k => v.stack_name if v.stack_name != null && length(v.stack_name) > 0 }
+}
+
